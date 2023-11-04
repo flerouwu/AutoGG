@@ -44,6 +44,10 @@
         },
         {
           "type": 0,
+          "pattern": "^ +GAME OVER!$"
+        },
+        {
+          "type": 0,
           "pattern": "^ +[\\d\\.]+k?/[\\d\\.]+k? \\w+$"
         },
         {
