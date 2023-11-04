@@ -48,8 +48,6 @@ public class AutoGG {
     @Mod.Instance
     public static AutoGG INSTANCE;
 
-    private final String[] primaryGGStrings = {"gg", "GG", "gf", "Good Game", "Good Fight", "Good Round! :D"};
-    private final String[] secondaryGGStrings = {"Have a good day!", "<3", "AutoGG By Sk1er!", "gf", "Good Fight", "Good Round", ":D", "Well played!", "wp"};
     private TriggersSchema triggers;
     private AutoGGConfig autoGGConfig;
 
@@ -65,11 +63,8 @@ public class AutoGG {
         autoGGConfig = new AutoGGConfig();
         autoGGConfig.preload();
 
-        Set<String> joined = new HashSet<>();
-        joined.addAll(Arrays.asList(primaryGGStrings));
-        joined.addAll(Arrays.asList(secondaryGGStrings));
-
-        PlaceholderAPI.INSTANCE.registerPlaceHolder("antigg_strings", String.join("|", joined));
+        Set<String> antiGGStrings = new HashSet<>(Arrays.asList("gg", "GG", "gf", "Good Game", "Good Fight", "Good Round! :D", "Have a good day!", "<3", "AutoGG By Sk1er!", "gf", "Good Fight", "Good Round", ":D", "Well played!", "wp"));
+        PlaceholderAPI.INSTANCE.registerPlaceHolder("antigg_strings", String.join("|", antiGGStrings));
 
         Multithreading.runAsync(new RetrieveTriggersTask());
         MinecraftForge.EVENT_BUS.register(new AutoGGHandler());
@@ -85,9 +80,9 @@ public class AutoGG {
     public void loadComplete(FMLLoadCompleteEvent event) {
         if (!usingEnglish) {
             EssentialAPI.getNotifications().push(
-                "AutoGG",
-                "We've detected your Hypixel language isn't set to English! AutoGG will not work on other languages.\n" +
-                    "If this is a mistake, feel free to ignore it.", 6
+                    "AutoGG",
+                    "We've detected your Hypixel language isn't set to English! AutoGG will not work on other languages.\n" +
+                            "If this is a mistake, feel free to ignore it.", 6
             );
         }
     }
@@ -109,13 +104,5 @@ public class AutoGG {
 
     public AutoGGConfig getAutoGGConfig() {
         return autoGGConfig;
-    }
-
-    public String[] getPrimaryGGStrings() {
-        return primaryGGStrings;
-    }
-
-    public String[] getSecondaryGGStrings() {
-        return secondaryGGStrings;
     }
 }

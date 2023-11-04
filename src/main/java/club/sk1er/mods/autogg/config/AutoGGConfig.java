@@ -45,12 +45,11 @@ public class AutoGGConfig extends Vigilant {
     private int autoGGDelay = 1;
 
     @Property(
-        type = PropertyType.SELECTOR, name = "Phrase",
+        type = PropertyType.TEXT, name = "Phrase",
         description = "Choose what message is said on game completion.",
-        category = "General", subcategory = "General",
-        options = {"gg", "GG", "gf", "Good Game", "Good Fight", "Good Round! :D"}
+        category = "General", subcategory = "General"
     )
-    private int autoGGPhrase = 0;
+    private String autoGGPhrase = "gg";
 
     @Property(
         type = PropertyType.SWITCH, name = "Second Message",
@@ -60,12 +59,11 @@ public class AutoGGConfig extends Vigilant {
     private boolean secondaryEnabled;
 
     @Property(
-        type = PropertyType.SELECTOR, name = "Phrase",
+        type = PropertyType.TEXT, name = "Phrase",
         description = "Send a secondary message sent after the first GG message.",
-        category = "General", subcategory = "Secondary Message",
-        options = {"Have a good day!", "<3", "AutoGG By Sk1er!", "gf", "Good Fight", "Good Round", ":D", "Well played!", "wp"}
+        category = "General", subcategory = "Secondary Message"
     )
-    private int autoGGPhrase2 = 0;
+    private String autoGGPhrase2 = "Have a good day :D";
 
     @Property(
         type = PropertyType.SLIDER, name = "Second Message Delay",
@@ -100,7 +98,7 @@ public class AutoGGConfig extends Vigilant {
         return autoGGDelay;
     }
 
-    public int getAutoGGPhrase() {
+    public String getAutoGGPhrase() {
         return autoGGPhrase;
     }
 
@@ -108,7 +106,7 @@ public class AutoGGConfig extends Vigilant {
         return secondaryEnabled;
     }
 
-    public int getAutoGGPhrase2() {
+    public String getAutoGGPhrase2() {
         return autoGGPhrase2;
     }
 
