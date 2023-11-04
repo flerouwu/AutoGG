@@ -54,11 +54,6 @@ public class AutoGG {
     private boolean usingEnglish;
 
     @Mod.EventHandler
-    public void onFMLPreInitialization(FMLPreInitializationEvent event) {
-        Multithreading.runAsync(this::checkUserLanguage);
-    }
-
-    @Mod.EventHandler
     public void onFMLInitialization(FMLInitializationEvent event) {
         autoGGConfig = new AutoGGConfig();
         autoGGConfig.preload();
@@ -74,24 +69,6 @@ public class AutoGG {
         // so users aren't waiting 5000 seconds to send GG
         if (autoGGConfig.getAutoGGDelay() > 5) autoGGConfig.setAutoGGDelay(1);
         if (autoGGConfig.getSecondaryDelay() > 5) autoGGConfig.setSecondaryDelay(1);
-    }
-
-    @Mod.EventHandler
-    public void loadComplete(FMLLoadCompleteEvent event) {
-        if (!usingEnglish) {
-            EssentialAPI.getNotifications().push(
-                    "AutoGG",
-                    "We've detected your Hypixel language isn't set to English! AutoGG will not work on other languages.\n" +
-                            "If this is a mistake, feel free to ignore it.", 6
-            );
-        }
-    }
-
-    private void checkUserLanguage() {
-        final String username = Minecraft.getMinecraft().getSession().getUsername();
-        final JsonHolder json = WebUtil.fetchJSON("https://api.sk1er.club/player/" + username);
-        final String language = json.optJSONObject("player").defaultOptString("userLanguage", "ENGLISH");
-        this.usingEnglish = "ENGLISH".equals(language);
     }
 
     public TriggersSchema getTriggers() {

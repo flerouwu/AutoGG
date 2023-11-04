@@ -7,6 +7,9 @@ This repo is a fork of [Sk1erLLC/AutoGG](https://github.com/Sk1erLLC/AutoGG) mod
 - Modified both the primary and secondary AutoGG phrases to be configurable as text.
   - Compared to the original mod only letting you select a few pre-determined phrases.
   - This means that you can use any phrase you want!
+- Removed language API
+  - The API doesn't return the language and so this is unnecessary.
+  - **Note:** the mod still only works with the English language selected.
 
 <details>
 <summary>Original README</summary>
