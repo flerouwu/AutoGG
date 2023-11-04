@@ -19,7 +19,7 @@ public class RetrieveTriggersTask implements Runnable {
 
     private final Logger LOGGER = LogManager.getLogger(this);
     private final Gson gson = new Gson();
-    private static final String TRIGGERS_URL = "https://static.sk1er.club/autogg/regex_triggers_3.json";
+    private static final String TRIGGERS_URL = "https://raw.githubusercontent.com/flerouwu/AutoGG/master/regex_triggers.json";
 
     /**
      * Runs a task which fetches the triggers JSON from the internet.
