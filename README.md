@@ -10,6 +10,8 @@ This repo is a fork of [Sk1erLLC/AutoGG](https://github.com/Sk1erLLC/AutoGG) mod
 - Removed language API
   - The API doesn't return the language and so this is unnecessary.
   - **Note:** the mod still only works with the English language selected.
+- Moved Regular Expression triggers data file to GitHub repo.
+  - This allows us to add custom regex triggers and custom servers for more support.
 
 <details>
 <summary>Original README</summary>
