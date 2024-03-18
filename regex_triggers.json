@@ -75,6 +75,10 @@
           "pattern": "^ {21}Bridge CTF [a-zA-Z]+ - \\d\\d:\\d\\d$"
         },
         {
+          "type": 0,
+          "pattern": "^\\s+Your team (lost|won)!$"
+        },   
+        {
           "type": 1,
           "pattern": "^MINOR EVENT! .+ in .+ ended$"
         },
