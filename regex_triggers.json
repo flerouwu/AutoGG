@@ -107,7 +107,7 @@
     {
       "name": "Hypixel Lilith",
       "kind": "SERVER_IP",
-      "data": "^localhost$",
+      "data": "^localhostFML:25565$",
       "messagePrefix": "/ac",
       "triggers": [
         {
